@@ -1,0 +1,960 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+body{
+    background: #F4F6F8;
+    min-height: 100%;
+    font-family: "kumbh Sans" , sans-serif;
+
+}
+/* styling header*/
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #939BF4;
+    height: 120px; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9; 
+    border-radius: 0 0 0 90px;
+
+}
+/* style for toggle button  */
+.toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .toggle-button input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    top: 2px;
+    background-color: #5964E0;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  input:checked + .slider:before {
+    background-color: #939BF4;
+    transform: translateX(19px);
+  }
+  
+.devjobs{
+    margin-left: 14%;
+    color: white;
+    /* text-shadow: black 25px; */
+}
+.mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 150px;
+    width: 100px;
+}
+.mode img{
+    width: 15px;
+}
+/* .mode div{
+    margin-left: 20px;
+    margin-right: 20px;
+} */
+
+/* styling the search and filter section */
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    background: #9DAEC2;
+    height: 60px;
+    width: 53%;
+    left: 15%;
+    top: 90px; 
+    z-index: 9;
+    border-radius: 5px;  
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    font-family: "kumbh Sans" , sans-serif;
+    margin-right: 1px;
+
+}
+.com-filter{
+    height: 100%;
+    width: 90%;
+    background:  #FFFFFF;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    margin-right: 1px
+}
+.loc-filter{
+    height: 100%;
+    width: 90%;
+    background:  #FFFFFF;
+    align-items: center;
+    margin-right: 1px
+
+}
+.fulltime-filter{
+    height: 100%;
+    width: 90%;
+    background:  #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.com-filter-search-box img{
+    width: 30px;
+}
+.com-filter-search-box input{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+.com-filter-search-box{
+    display: flex;
+    width: 350px;
+    padding-left: 30px;
+    cursor: pointer;
+
+}
+.search-icon{
+    width: 10px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.loc-filter-search-box img{
+    width: 30px;
+}
+
+.loc-filter-search-box input{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+.loc-filter-search-box{
+    display: flex;
+    width: 350px;
+    margin-top: 15px;
+    padding-left: 30px;
+    cursor: pointer;
+
+}
+
+.loc-icon{
+    width: 6px;
+    height: 30px;
+    margin-right: 10px;
+}
+/* styling check box */
+
+.fulltime-filter-check-box label{
+    cursor: pointer;
+    display: flex;
+   
+}
+.fulltime-filter-check-box input[type="checkbox"]{
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+.fulltime-filter-check-box label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: .05em  solid #dbe0e7;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: #dbe0e7;
+    
+}
+.fulltime-filter-check-box label:hover::before,
+.fulltime-filter-check-box input[type="checkbox"]:hover + label::before{
+    background-color: #939BF4;     
+} 
+
+.fulltime-filter-check-box input[type="checkbox"]:checked + label::before{
+    /* get correctcheck mark */
+    content: '\35000';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5964E0;
+    color: #FFFFFF;
+}
+ 
+.search-button {
+    color: #FFFFFF;
+    background-color:#5964E0;
+    padding: 8px 22px;
+    border-radius: 5px;
+    margin-right: 20px;
+    position: relative;
+    border: 2px solid #5964E0;
+    cursor: pointer;
+} 
+.search-button:hover{
+    background-color:#939BF4;
+    border: 2px solid #939BF4;
+}
+
+/* styling for the div containing job positions */
+.dev-jobs{
+    margin-top: 80px;
+    position: absolute;
+    width: 70%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* background-color: red; */
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(3, 315px);
+    grid-auto-rows: 280px;
+    column-gap: 30px;
+    /* flex-wrap: wrap; */
+    opacity: 5;
+    right: 15%;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 11%;
+}
+
+.devjobs-container{
+    width: 315px;
+    height: 220px;
+    background-color: white;
+    border-radius: 5px;
+    opacity: 6;
+    /* gap: 3rem; */
+    /* margin: 20px; */
+}
+
+.job-logo{
+    width: 50px;
+    height: 50px;
+    /* background-color: green; */
+    position:relative;
+    z-index: 7;
+    top: -25px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.font{
+    color: #6E8098;
+    font-size: 16px;
+    font-family: Kumbh Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 30px;
+}
+.job{
+    margin-left: 30px;
+    margin-top: 16px;
+    margin-bottom: 17px;
+    font-weight: 700;
+    cursor: pointer;
+
+} 
+.job:hover{
+    color: #6E8098;
+}
+.logo{
+    margin-left: 30px;
+    margin-bottom: 40px;
+    color: #6E8098;
+    font-size: 16px;
+    font-family: Kumbh Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+
+}
+
+.location{
+    margin-left: 30px;
+    color: #5964E0;
+    font-size: 14px;
+    font-family: Kumbh Sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+/* creating a div to center the button */
+.load-button{
+    /* border: 5px solid red; */
+    position: absolute;
+    /* left: 530px; */
+    left: 38%;
+    top: 1350px;
+    padding-bottom: 50px;
+    
+} 
+
+.load-more{
+    color: #FFFFFF;
+    background-color:#5964E0;
+    padding: 3px 12px;
+    border-radius: 5px;
+    border: 2px solid #5964E0;
+    cursor: pointer;
+    width: 94px;
+    height: 34px;
+    margin-top:30px;
+}
+.load-more:hover{
+    background-color:#939BF4;
+    border: 2px solid #939BF4;
+}
+
+/* styling the svg images */
+.scoot{
+    background-color: #E99210;
+}
+
+.blogr{
+    background-color: #E54D25
+}
+
+.vector{
+    background-color: #34353F;
+}
+.office-lite{
+    background-color: #2F4FC7;
+}
+.pod{
+    background-color: #132034;
+}
+.creative{
+    background-color: #4E1853;
+}
+.pomodoro{
+    background-color: #4722C6;
+}
+.maker{
+    background-color: #21427D;
+}
+.coffeeroasters{
+    background-color: #F2DECB;
+}
+.mastercaft{
+    background-color: #1F1F1F;
+}
+.crowdfund{
+    background-color: #37C790;
+}
+.typemaster{
+    background-color: #F16718;
+}
+
+
+/* change your styling units to relative units */
+
+/* styling for the scoot page */
+.company-site{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    position: fixed;
+    background: #FFFFFF;
+    height: 140px;
+    width: 60%;
+    right: 15%;
+    top: 90px; 
+    z-index: 7;
+    border-radius: 6px; 
+    z-index: 9;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    /* border: 3px solid red; */
+}
+.company-site-logo{
+    background-color: #E99210;
+    width: 140px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px 0 0 6px;
+    
+}
+.svg-logo{
+    height: 30px;
+}
+.company-site-box{
+    width: 722px;
+    padding: 42px;
+    display: flex;
+    justify-content: space-between;
+}
+.site-button{
+    color: #5964E0;
+    font-weight: 700;
+    background-color: rgb(244, 246, 255);
+    padding: 3px 12px;
+    border-radius: 5px;
+    border: 2px solid #F4F6F8;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    font-family: Kumbh Sans;
+}
+.site-button:hover{
+    /* set the right color for hover */
+    background-color: rgb(170, 179, 235) ;
+}
+.company-details{
+    position: absolute;
+    background: #FFFFFF;
+    /* height: 140px; */
+    width: 60%;
+    right: 15%;
+    top: 260px; 
+    z-index: 7;
+    border-radius: 6px;
+    padding: 45px 45px 0 45px; 
+    
+}
+.company-position{
+   position: relative;
+   display: flex;
+   justify-content:space-between;
+   align-items: center;
+}
+.company-postion-title{
+    color: #19202D;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 13px;
+    
+}
+.font.company{
+    margin: 0;
+}
+.apply{
+    color: white;
+    font-weight: 700;
+    background-color:#5964E0;
+    padding: 3px 12px;
+    border-radius: 5px;
+    border: 2px solid #5964E0;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+    font-family: Kumbh Sans;
+}
+.apply:hover{
+    background-color: #939BF4;
+    border: #939BF4;;
+}
+.location.country{
+    margin-left: 0;
+    margin-top: 13px;
+    margin-bottom: 30px;
+}
+.info-styling{
+    font-size: 16px;
+    line-height: 26px;
+    color: #6E8098;
+}
+.requirement{
+    color: #19202D;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    margin-top: 40px;
+}
+ul, ol{
+    padding-left: 20px;
+
+}
+
+
+ul li, ol li {
+    padding-left: 10px; 
+    margin-bottom: 8px;
+  }
+/* styling for color of unordered list */
+ul{
+    list-style: none;
+}
+ul li::before{
+    content: "\2022";
+    color: #5964E0;
+    font-size: 30px;
+    font-weight: 700;
+    display: inline-block; 
+    margin-right: 19 px;
+    
+
+}
+ol li::marker {
+    color: #5964E0;
+  }
+  
+.req-list{
+    padding-top: 23px;
+}
+.task-info{
+    margin-bottom: 30px;
+}
+.footer{
+    height: 90px;
+    width: 100%;
+    background-color:#FFFFFF;
+    /* z-index: 7; */
+    bottom:0 ;
+    /* margin-top: 500px; */
+    top: 1550px;
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
+.footer-content-holder{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-left: 140px;
+}
+/* .footer-content{
+    background-color: #37C790;
+
+} */
+.footer-name{
+    color: #19202D;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.inc{
+    color: #6E8098;
+    font-size: 16px;
+    font-weight: 400;
+}
+.company-name{
+    color: #19202D;
+    font-size: 24px;
+    font-weight: 700;
+}
+.company-website{
+    color: #6E8098;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* dark mode css */
+.dark-mode .search{
+    box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .devjobs-container {
+    background-color: #19202D;
+    color: white;
+  }
+.dark-mode .com-filter{
+    background-color: #19202D;
+    color: #FFFFFF;
+  }
+
+.dark-mode .loc-filter{
+    background-color: #19202D;
+    color: #FFFFFF;
+  }
+.dark-mode .fulltime-filter{
+    background-color: #19202D;
+    color: #FFFFFF;
+}
+
+body .dark-mode{
+    background-color: #121721;
+   }
+   
+/* Checkbox Hover Styles in Dark Mode */
+.dark-mode .fulltime-filter input[type="checkbox"] + label::before {
+    border-color: #34353F;
+    background-color: #34353F;
+  }
+
+.dark-mode .fulltime-filter input[type="checkbox"]:checked + label::before {
+    /* your checked checkbox styles in dark mode here */
+    border-color: #5964E0;
+    background-color: #5964E0;
+  }
+ 
+  /* dark mode for scoot */
+.dark-mode .company-site-box {
+    background-color: #19202D;
+  }
+  
+.dark-mode .company-details {
+    background-color: #19202D;
+  }
+.dark-mode .company-site{
+    background-color: #19202D;
+    box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.1);
+}
+.dark-mode .company-site-button button {
+    background-color: #34353F;
+    border: 2px solid #34353F;
+    color: #FFFFFF;
+  }
+.dark-mode .company-name, .dark-mode .company-postion-title, .dark-mode .requirement, .dark-mode .task {
+    color: #FFFFFF;
+}
+.dark-mode .company-site-button button:hover {
+    background-color: #494f56;
+    border: 2px solid #494f56;
+  }
+.dark-mode .footer{
+    background-color: #19202D;
+}
+.dark-mode .footer-name{
+    color: #FFFFFF;
+}
+
+/*coding for responsiveness to fit tablet mode*/
+@media screen and (max-width: 768px)
+ {
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    .dev-jobs {
+            position:inherit;
+            margin-left: 39px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            display: grid;
+            grid-template-columns: repeat(2, 339px);
+            grid-auto-rows: 300px;
+            column-gap: 10px;
+            /* flex-wrap: wrap; */
+            opacity: 5;
+           
+            /* justify-content: space-between; */
+            align-items: center;
+            margin-top: 30%;
+        }
+ .devjobs-container {
+                width: 339px;
+                height: 253px;
+                background-color: white;
+                border-radius: 5px;
+                opacity: 6;
+                    /* gap: 3rem; */
+                    /* margin: 20px; */
+                }
+     .font {
+            color: #6E8098;
+            font-size: 6px;
+            font-family: Kumbh Sans;
+            font-style: normal;
+            font-weight: 100;
+            line-height: normal;
+            margin-left: 30px;
+            }
+   .devjobs{
+        font-size: 14px;
+        line-height: 50px;
+        color: white;
+        margin-left: 27px;
+    }
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    background: #9DAEC2;
+    height: 80px;
+    width: 689px;
+    left: 6%;
+    top: 90px;
+    z-index: 9;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    font-family: "kumbh Sans", sans-serif;
+    margin-right: 1px;
+
+}
+.com-filter {
+    height: 100%;
+    width: 50%;
+    background: #FFFFFF;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    margin-right: 1px
+}
+
+.loc-filter {
+    height: 100%;
+    width: 50%;
+    background: #FFFFFF;
+    align-items: center;
+    margin-right: 1px
+}
+
+.fulltime-filter {
+    height: 100%;
+    width: 50%;
+    background: #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.com-filter-search-box img {
+    width: 24px;
+}
+
+.com-filter-search-box input {
+    width: 30%;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+.com-filter-search-box {
+    display: flex;
+    width: 147px;
+    padding-left: 30px;
+    cursor: pointer;
+
+}
+
+.search-icon {
+    width: 10px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.loc-filter-search-box img {
+    width: 24px;
+}
+
+.loc-filter-search-box input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 0;
+}
+
+.loc-filter-search-box {
+    display: flex;
+    width: 147px;
+    margin-top: 15px;
+    padding-left: 30px;
+    cursor: pointer;
+
+}
+
+.loc-icon {
+    width: 6px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* styling check box */
+
+.fulltime-filter-check-box label {
+    cursor: pointer;
+    display: flex;
+
+}
+
+.fulltime-filter-check-box input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+.fulltime-filter-check-box label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: .05em solid #dbe0e7;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: #dbe0e7;
+
+}
+
+.fulltime-filter-check-box label:hover::before,
+.fulltime-filter-check-box input[type="checkbox"]:hover+label::before {
+    background-color: #939BF4;
+}
+
+.fulltime-filter-check-box input[type="checkbox"]:checked+label::before {
+    /* get correctcheck mark */
+    content: '\35000';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5964E0;
+    color: #FFFFFF;
+}
+
+.search-button {
+    color: #FFFFFF;
+    background-color: #5964E0;
+    padding: 8px 22px;
+    border-radius: 5px;
+    margin-right: 20px;
+    position: relative;
+    border: 2px solid #5964E0;
+    cursor: pointer;
+}
+.load-button {
+    /* border: 5px solid red; */
+    position: absolute;
+    /* left: 530px; */
+    left: 43%;
+    top: 2030px;
+    
+
+}
+.job {
+    font-size: 20px;
+}
+.font{
+    font-size: 16px;
+}
+.logo{
+    font-size: 16px;
+}
+.location{
+    font-size: 14px;
+}
+.toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-button input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    top: 2px;
+    background-color: #5964E0;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+input:checked+.slider:before {
+    background-color: #939BF4;
+    transform: translateX(19px);
+}
+
+.company-details {
+    position: absolute;
+    background: #FFFFFF;
+    /* height: 140px; */
+    width: 689px;
+    height: 140px;
+    left: 40px;  
+    top: 260px;
+    z-index: 7;
+    border-radius: 6px;
+    padding: 45px 45px 0 45px;
+
+}
+
+.company-site {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    position: fixed;
+    background: #FFFFFF;
+    height: 140px;
+    width: 689px;
+    left: 5.5%;
+    top: 90px;
+    z-index: 7;
+    border-radius: 6px;
+    z-index: 9;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    /* border: 3px solid red; */
+}
+
+.footer {
+    height: 90px;
+    width: 100%;
+    background-color: #FFFFFF;
+    /* z-index: 7; */
+    bottom: 0;
+    /* margin-top: 500px; */
+    top: 1645px;
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
+.footer-content-holder {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+}
