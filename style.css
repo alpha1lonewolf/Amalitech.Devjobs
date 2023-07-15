@@ -9,6 +9,7 @@ body{
     font-family: "kumbh Sans" , sans-serif;
 
 }
+
 /* styling header*/
 .header{
     display: flex;
@@ -582,6 +583,9 @@ ol li::marker {
 }
 
 /* dark mode css */
+.dark-mode.mess{
+            color: #121721;
+}
 .dark-mode .search{
     box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.1);
 }
@@ -603,9 +607,7 @@ ol li::marker {
     color: #FFFFFF;
 }
 
-body .dark-mode{
-    background-color: #121721;
-   }
+
    
 /* Checkbox Hover Styles in Dark Mode */
 .dark-mode .fulltime-filter input[type="checkbox"] + label::before {
@@ -620,6 +622,7 @@ body .dark-mode{
   }
  
   /* dark mode for scoot */
+  
 .dark-mode .company-site-box {
     background-color: #19202D;
   }
@@ -649,6 +652,7 @@ body .dark-mode{
 .dark-mode .footer-name{
     color: #FFFFFF;
 }
+
 
 /*coding for responsiveness to fit tablet mode*/
 @media screen and (max-width: 768px)
@@ -698,6 +702,7 @@ body .dark-mode{
         line-height: 50px;
         color: white;
         margin-left: 27px;
+        
     }
 .search {
     display: flex;
@@ -707,7 +712,7 @@ body .dark-mode{
     background: #9DAEC2;
     height: 80px;
     width: 689px;
-    left: 6%;
+    left: 5%;
     top: 90px;
     z-index: 9;
     border-radius: 5px;
@@ -736,7 +741,7 @@ body .dark-mode{
 
 .fulltime-filter {
     height: 100%;
-    width: 50%;
+    width: 70%;
     background: #FFFFFF;
     border-radius: 0 5px 5px 0;
     display: flex;
@@ -750,7 +755,7 @@ body .dark-mode{
 }
 
 .com-filter-search-box input {
-    width: 30%;
+    width: 100%;
     background: transparent;
     outline: none;
     border: 0;
@@ -801,7 +806,7 @@ body .dark-mode{
 .fulltime-filter-check-box label {
     cursor: pointer;
     display: flex;
-
+    
 }
 
 .fulltime-filter-check-box input[type="checkbox"] {
@@ -906,6 +911,7 @@ input:checked+.slider:before {
     transform: translateX(19px);
 }
 
+/*styling for responsiveness on tablet mode for scoot page*/
 .company-details {
     position: absolute;
     background: #FFFFFF;
@@ -957,4 +963,15 @@ input:checked+.slider:before {
     justify-content: space-between;
     margin-left: 50px;
 }
+}
+.mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 35px;
+    width: 100px;
+}
+
+.mode img {
+    width: 15px;
 }
